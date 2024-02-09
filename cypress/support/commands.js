@@ -24,6 +24,3 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-static get userName() {
-    return userName(id = "user-name");
-}
