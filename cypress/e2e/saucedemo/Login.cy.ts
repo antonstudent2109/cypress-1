@@ -1,10 +1,10 @@
-describe('template spec', () => {
+describe('Login pass', () => {
   it('Login', () => {
-    cy.visit('https://www.saucedemo.com/');
-    cy.get('input[id="user-name"]').type('user.email'); //https://docs.cypress.io/api/cypress-api/custom-commands
-    cy.get('input[name=password]').type('secret_sauce');
-    cy.get('login-button').click();
-    cy.get('class').contains(`app_logo`);
+    LOGINPAGE.click();
+    USERNAMEFIELD.click();
+    PASSWORDFIELD.click();
+    LOGINBUTTON.click();
+    cy.get('class').contains('shopping_cart_container');
     cy.get('continue').click();
     })
 })

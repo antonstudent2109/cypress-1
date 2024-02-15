@@ -1,5 +1,6 @@
  describe('checkout test', ()=>{
     it('Checkout test', () => {
+      cy.type('Cypress.io{enter}');
       cy.get('add-to-cart-sauce-labs-bike-light').click();
       cy.get('shopping_cart_badge').click();
       cy.get('checkout').click();
