@@ -13,7 +13,8 @@ describe('checkout test', () => {
   })
   it('Checkout test', () => {
     // cy.type('Cypress.io{enter}');
-    cy.get('#add-to-cart-sauce-labs-bike-light').click();
+    cy.get('#add-to-cart-sauce-labs-backpack').click();
+    cy.get('#add-to-cart-sauce-labs-onesie').click();
     cy.get('.shopping_cart_badge').click();
     cy.get('#checkout').click();
     cy.get('[data-test="firstName"]').type('Anton'); //https://docs.cypress.io/api/cypress-api/custom-commands
@@ -21,6 +22,7 @@ describe('checkout test', () => {
     cy.get('[data-test="postalCode"]').type('220');
     cy.get('#continue').click();
     cy.get('#finish').click();
+    cy.contains('Thank you for your order!');
   })
 
 })
