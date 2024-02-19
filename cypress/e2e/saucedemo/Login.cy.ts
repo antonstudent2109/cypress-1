@@ -9,6 +9,7 @@ describe('Login to saucedemo', () => {
     it('Positive login to saucedemo', () => {
         cy.get('[data-test="username"]').type(STANDART_USER)
         cy.get('[data-test="password"]').type(PASSWORD)
+
         cy.get('#login-button').click()
         cy.get('.shopping_cart_link').should('be.visible')
         var names
