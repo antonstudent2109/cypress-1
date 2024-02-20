@@ -1,26 +1,15 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
+var items = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']
+Cypress.Commands.add("validateNamesAtoZ", () => {
+    cy.get('data-test="product_sort_container"').should('have.value', 'az')
+    cy.get('.inventory_item_name ').should(($item1) => {
+        expect($item1).to.have.length(6)
+    })
+    //cy.get('.inventory_item_name ').should('have.length', 6) //??
+    cy.get('.inventory_item_name ').eq(0).should("have.text", items[0])
+    cy.get('.inventory_item_name ').eq(1).should("have.text", items[1])
+    cy.get('.inventory_item_name ').eq(2).should("have.text", items[2])
+    cy.get('.inventory_item_name ').eq(3).should("have.text", items[3])
+    cy.get('.inventory_item_name ').eq(4).should("have.text", items[4])
+    cy.get('.inventory_item_name ').eq(5).should("have.text", items[5])
+    
+})

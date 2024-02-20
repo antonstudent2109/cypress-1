@@ -15,14 +15,15 @@ describe('Login to saucedemo', () => {
         var names
         cy.get('.inventory_item_name').invoke('text').then((text) => {
             names = names.
-        expect(names).to.be.eq("123")
-    })
+                expect(names).to.be.eq("123")
+        })
 
-    it.skip('Negative login test', () => {
+        it.skip('Negative login test', () => {
 
-        cy.get('[data-test="username"]').type('abc')
-        cy.get('[data-test="password"]').type('abc')
-        cy.get('#login-button').click()
-        cy.get('.error-button').should('be.visible')
+            cy.get('[data-test="username"]').type('abc')
+            cy.get('[data-test="password"]').type('abc')
+            cy.get('#login-button').click()
+            cy.get('.error-button').should('be.visible')
+        })
     })
-})})
+})

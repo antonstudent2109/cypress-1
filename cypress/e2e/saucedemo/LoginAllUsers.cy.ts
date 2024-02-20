@@ -10,10 +10,11 @@ describe('Login to saucedemo', () => {
         cy.get('#login-button').click()
         cy.get('.error-button').should('be.visible')
         cy.contains('Epic sadface: Sorry, this user has been locked out.')
-    })})
-    it('Problem user Login', () => {
-        cy.get('[data-test="username"]').type(PROBLEM_USER)
-        cy.get('[data-test="password"]').type(PASSWORD)
-        cy.get('#login-button').click()
-        cy.contains('.shopping_cart_link')
     })
+})
+it('Problem user Login', () => {
+    cy.get('[data-test="username"]').type(PROBLEM_USER)
+    cy.get('[data-test="password"]').type(PASSWORD)
+    cy.get('#login-button').click()
+    cy.contains('.shopping_cart_link')
+})
