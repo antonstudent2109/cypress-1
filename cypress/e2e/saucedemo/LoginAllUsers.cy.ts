@@ -1,4 +1,4 @@
-import { STANDART_USER, PASSWORD, URL, LOCKED_USER, PROBLEM_USER } from "../../Constants";
+import { PASSWORD, URL, LOCKED_USER, PROBLEM_USER } from "../../Constants";
 describe('Login to saucedemo', () => {
     beforeEach(() => {
         cy.visit(URL)
